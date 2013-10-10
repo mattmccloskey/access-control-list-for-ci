@@ -16,36 +16,36 @@ This library will get you up and running with an ACL in CodeIgniter quickly and 
 #### First, create your database tables. This library requires three tables.
 1. A list of Access Request Objects. (Like users, accounts, api keys, etc)
 ```
-CREATE TABLE `acl_aros` (
-	`id` int(11) NOT NULL auto_increment,
-	`parent_id` int(11) default NULL,
-	`title` varchar(40) default NULL,
-	`model` varchar(40) default NULL,
-	`foreign_key` int(11) unsigned default NULL,
-	`description` tinytext,
-	PRIMARY KEY  (`id`)
+CREATE TABLE `acl_aros` (  
+	`id` int(11) NOT NULL auto_increment,  
+	`parent_id` int(11) default NULL,  
+	`title` varchar(40) default NULL,  
+	`model` varchar(40) default NULL,  
+	`foreign_key` int(11) unsigned default NULL,  
+	`description` tinytext,  
+	PRIMARY KEY  (`id`)  
 ) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8
 ```
 2. A list of Access Control Objects. (Like secure areas, features, or even read/write permission)
 ```
-CREATE TABLE `acl_acos` (
-	`id` int(11) NOT NULL auto_increment,
-	`parent_id` int(11) default NULL,
-	`title` varchar(40) default NULL,
-	`model` varchar(40) default NULL,
-	`foreign_key` int(11) unsigned default NULL,
-	`description` tinytext,
-	PRIMARY KEY  (`id`)
+CREATE TABLE `acl_acos` (  
+	`id` int(11) NOT NULL auto_increment,  
+	`parent_id` int(11) default NULL,  
+	`title` varchar(40) default NULL,  
+	`model` varchar(40) default NULL,  
+	`foreign_key` int(11) unsigned default NULL,  
+	`description` tinytext,  
+	PRIMARY KEY  (`id`)  
 ) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8
 ```
 3. A list of permissions (Does ARO x have access to ACO y?)
 ```
-CREATE TABLE `acl_permissions` (
-	`id` int(11) NOT NULL auto_increment,
-	`aro_id` int(11) default NULL,
-	`aco_id` int(11) default NULL,
-	`access` varchar(20) default NULL,
-	PRIMARY KEY  (`id`)
+CREATE TABLE `acl_permissions` (  
+	`id` int(11) NOT NULL auto_increment,  
+	`aro_id` int(11) default NULL,  
+	`aco_id` int(11) default NULL,  
+	`access` varchar(20) default NULL,  
+	PRIMARY KEY  (`id`)  
 ) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=latin1
 ```
 
